@@ -1,1 +1,1 @@
-​
+Follow the same method as word break but instead at each break you maintain a temp string variable and append it to the final result once we reach the end of our word.
