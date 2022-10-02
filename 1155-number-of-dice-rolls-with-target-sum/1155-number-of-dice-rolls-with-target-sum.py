@@ -1,14 +1,10 @@
 class Solution:
     def numRollsToTarget(self, n: int, k: int, target: int) -> int:
         
-        lis = [0]
-        return self.num_rolls(n, target, k, {}, lis) % (10**9 + 7)
-        
-            
+        return self.num_rolls(n, target, k, {}) % (10**9 + 7)
 
     
-    
-    def num_rolls(self, n, target, k, mem, lis):
+    def num_rolls(self, n, target, k, mem):
         
         
         if n == 0:
@@ -22,7 +18,7 @@ class Solution:
             ans = 0
             for i in range(1, k+1):
 
-                ans += self.num_rolls(n-1, target - i, k, mem, lis)
+                ans += self.num_rolls(n-1, target - i, k, mem)
             mem[(target, n)] = ans
 
             
