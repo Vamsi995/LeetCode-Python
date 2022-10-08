@@ -2,8 +2,8 @@
 #     def threeSumClosest(self, nums: List[int], target: int) -> int:
         
 #         nums.sort()
-#         result = inf
-#         stored_sum = None
+#         min_diff = inf
+#         ans = None
         
 #         for i in range(len(nums)):
             
@@ -14,9 +14,9 @@
                 
 #                 tot = nums[i] + nums[l] + nums[r]
 #                 dif = abs(target - tot) 
-#                 if dif < result:
-#                     result = dif
-#                     stored_sum = tot
+#                 if dif < min_diff:
+#                     min_diff = dif
+#                     ans = tot;
 #                 if tot == target:
 #                     return tot
 #                 elif tot < target:
@@ -24,7 +24,7 @@
 #                 elif tot > target:
 #                     r -= 1
                 
-#         return stored_sum
+#         return ans
 
 class Solution:
     def threeSumClosest(self, nums: List[int], target: int) -> int:
